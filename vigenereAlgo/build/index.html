@@ -1,71 +1,73 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vigenere Algorithm</title>
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body
-    class="bg-customWhite flex flex-col items-center justify-center min-h-screen font-Poppins"
-  >
-    <div
-      class="w-[320px] h-[490px] bg-customDarkBlue md:p-10 p-8 flex flex-col items-center rounded-lg shadow-lg md:w-[520px] md:h-[450px] md:rounded-xl"
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Vigenere Algorithm</title>
+        <link rel="stylesheet" href="../build/css/style.css" />
+    </head>
+    <body
+        class="bg-customWhite flex flex-col items-center justify-center min-h-screen font-Poppins"
     >
-      <h1
-        class="text-customWhite text-xl uppercase md:text-3xl font-bold -tracking-tighter"
-      >
-        Vigenere Algorithm
-      </h1>
-
-      <!-- Input Plain Text -->
-      <div class="space-y-4 mt-8">
-        <label class="text-white text-lg md:text-2xl capitalize"
-          >Plain Text:
-        </label>
-        <input
-          id="plain-text"
-          type="text"
-          placeholder="Enter Plain Text"
-          class="p-1 text-lg ml-4 rounded-full md:px-6 md:text-xl px-4 bg-customGrey text-customWhite placeholder:text-customWhite focus:outline-none md:py-2"
-          required
-        />
-      </div>
-
-      <!-- Input key -->
-      <div class="space-y-4 mt-6 md:space-x-20">
-        <label class="text-white text-lg md:text-2xl capitalize">Key: </label>
-        <input
-          id="key"
-          type="text"
-          placeholder="Enter Key"
-          class="p-1 text-lg ml-4 md:px-6 md:py-2 md:text-xl rounded-full px-4 bg-customGrey text-customWhite placeholder:text-customWhite focus:outline-none"
-          required
-        />
-      </div>
-
-      <!-- Result -->
-      <div class="space-y-4 md:space-x-12 mt-6 md:mt-6">
-        <label class="text-white text-lg md:text-2xl capitalize"
-          >Cipher:
-        </label>
-        <input
-          id="result"
-          type="text"
-          class="p-1 text-lg ml-4 md:px-6 md:py-2 md:text-xl rounded-full px-4 bg-customGrey text-customWhite placeholder:text-customWhite focus:outline-none"
-        />
-      </div>
-
-      <!-- Button Container -->
-      <div class="mt-8 md:mt-10">
-        <button
-          id="btn"
-          class="bg-customLightRed md:text-xl uppercase active:scale-[0.98] -tracking-tighter px-4 py-2 rounded-full text-customWhite cursor-pointer"
+        <div
+            class="w-[320px] h-[490px] bg-customDarkBlue md:p-12 p-10 flex flex-col items-center rounded-lg shadow-lg md:w-[520px] md:h-[450px] md:rounded-xl"
         >
-          Encrypt
-        </button>
-      </div>
-    </div>
-    <script src="../build/js/script.js"></script>
-  </body>
+            <h1
+                class="text-customWhite text-xl uppercase md:text-3xl font-bold -tracking-tighter"
+            >
+                Vigenere Algorithm
+            </h1>
+
+            <!-- Input Plain Text -->
+            <div class="space-y-4 mt-8">
+                <label class="text-white text-lg md:text-2xl capitalize"
+                    >Plain Text:
+                </label>
+                <input
+                    id="plain-text"
+                    type="text"
+                    placeholder="Enter Plain Text"
+                    class="p-1 text-lg ml-4 w-[200px] rounded-full md:px-6 md:text-xl px-4 bg-customGrey text-customWhite placeholder:text-customWhite focus:outline-none md:py-2"
+                    required
+                />
+            </div>
+
+            <!-- Input key -->
+            <div class="space-y-4 mt-6 md:space-x-20">
+                <label class="text-white text-lg md:text-2xl capitalize"
+                    >Key:
+                </label>
+                <input
+                    id="key"
+                    type="text"
+                    placeholder="Enter Key"
+                    class="p-1 text-lg w-[200px] ml-4 md:px-6 md:py-2 md:text-xl rounded-full px-4 bg-customGrey text-customWhite placeholder:text-customWhite focus:outline-none"
+                    required
+                />
+            </div>
+
+            <!-- Result -->
+            <div class="space-y-4 md:space-x-12 mt-6 md:mt-6">
+                <label class="text-white text-lg md:text-2xl capitalize"
+                    >Cipher:
+                </label>
+                <input
+                    id="result"
+                    type="text"
+                    class="p-1 text-lg ml-4 w-[200px] md:px-6 md:py-2 md:text-xl rounded-full px-4 bg-customGrey text-customWhite placeholder:text-customWhite focus:outline-none"
+                />
+            </div>
+
+            <!-- Button Container -->
+            <div class="mt-8 md:mt-10">
+                <button
+                    id="btn"
+                    class="bg-customLightRed md:text-xl uppercase active:scale-[0.98] -tracking-tighter px-4 py-2 rounded-full text-customWhite cursor-pointer"
+                >
+                    Encrypt
+                </button>
+            </div>
+        </div>
+        <script src="../build/js/script.js"></script>
+    </body>
 </html>
