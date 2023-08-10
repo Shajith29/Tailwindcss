@@ -1,7 +1,30 @@
+const flipBtn = document.getElementById("flip-btn");
+const switchEl = document.getElementById("switch");
+const frontEl = document.getElementById("front");
+const backEl = document.getElementById("back");
+
+/* Front Card */
 const plainTextEl = document.getElementById("plain-text");
-const keyEl = document.getElementById("key");
-const btnEl = document.getElementById("btn");
-const resultEl = document.getElementById("result");
+const eKeyEl = document.getElementById("fkey");
+const eBtnEl = document.getElementById("ebtn");
+const cipherValue = document.getElementById("cipher");
+
+/* Back Card */
+const cipherTextEl = document.getElementById("cipher");
+const dKeyEl = document.getElementById("fkey");
+const dBtnEl = document.getElementById("dbtn");
+const plainValue = document.getElementById("plain");
+
+flipBtn.addEventListener("click", () => {
+    switchEl.classList.toggle("slide");
+
+    frontEl.classList.toggle("flex");
+    frontEl.classList.toggle("hidden");
+
+    backEl.classList.toggle("flex");
+    backEl.classList.toggle("hidden");
+});
+
 const alphabets = [
     "a",
     "b",
@@ -32,9 +55,10 @@ const alphabets = [
 ];
 
 const VigenereEncrypt = () => {
+    cipherValue.value = "";
     let encryptedText = "";
     const plainText = plainTextEl.value.toLowerCase();
-    const key = keyEl.value.toLowerCase();
+    const key = eKeyEl.value.toLowerCase();
 
     // convert the plain text and key into array
 
@@ -48,7 +72,7 @@ const VigenereEncrypt = () => {
 
         //get the character of key and index and store in a variable
 
-        const keyChar = key[i % key.length];
+        const keyChar = keyArr[i % keyArr.length];
         const keyIndex = alphabets.indexOf(keyChar);
 
         //get the index of the plain text of each character
@@ -58,7 +82,40 @@ const VigenereEncrypt = () => {
         const cipher = (keyIndex + CharIndex) % alphabets.length;
         encryptedText += alphabets[cipher];
     }
-    resultEl.value = encryptedText;
+    cipherValue.value = encryptedText;
 };
 
-btnEl.addEventListener("click", VigenereEncrypt);
+const VigenereDecrypt = () => {
+    let encryptedText = "";
+    plainValue.value = "";
+    const cipherText = cipherTextEl.value.toLowerCase();
+    const key = dKeyEl.value.toLowerCase();
+
+    //convert string to array
+    const cipherArr = cipherText.split("").filter((item) => item !== "");
+    const keyArr = key.split("").filter((item) => item !== "");
+
+    for (let i = 0; i < cipherArr.length; i++) {
+        //store each element in  a variable
+
+        const char = cipherArr[i];
+
+        //get the index of each character
+        const charIndex = alphabets.indexOf(char);
+
+        // get each character of keyword and store it in a variable
+
+        const keyChar = keyArr[i % keyArr.length];
+
+        // get the index of each key character
+
+        const keyIndex = alphabets.indexOf(keyChar);
+
+        const plainText = (charIndex - keyIndex + alphabets.length) % 26;
+        encryptedText += alphabets[plainText];
+    }
+    plainValue.value = encryptedText;
+};
+
+eBtnEl.addEventListener("click", VigenereEncrypt);
+dBtnEl.addEventListener("click", VigenereDecrypt);
