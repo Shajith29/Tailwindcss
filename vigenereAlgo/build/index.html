@@ -1,164 +1,165 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Vigenere Algorithm</title>
-        <link rel="stylesheet" href="css/style.css" />
-    </head>
-    <body
-        class="bg-customWhite flex flex-col items-center justify-center min-h-screen font-Poppins"
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vigenere Algorithm</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body
+    class="bg-customWhite flex flex-col items-center justify-center min-h-screen font-Poppins"
+  >
+    <!-- Flip Button -->
+
+    <button
+      id="flip-btn"
+      class="absolute justify-between px-8 top-20 w-[5rem] h-[2rem] md:w-[10.5rem] md:h-[4.5rem] flex border-none bg-customDarkBlue items-center text-customWhite rounded-full"
     >
-        <!-- Flip Button -->
-
-        <button
-            id="flip-btn"
-            class="absolute justify-between px-8 top-20 w-[5rem] h-[2rem] md:w-[10.5rem] md:h-[4.5rem] flex border-none bg-customDarkBlue items-center text-customWhite rounded-full"
+      <span class="left-2 text-[8px] md:text-lg absolute md:top-5.5 md:left-3"
+        >Encrypt</span
+      >
+      <span
+        class="text-[8px] md:text-lg absolute md:top-5.5 md:right-2 right-1.5"
+        >Decrypt</span
+      >
+      <span
+        id="switch"
+        class="bg-customWhite transition-all duration-1000 ease-in-out text-center absolute top-0 left-0 w-[50%] h-[100%] rounded-full"
+      ></span>
+    </button>
+    <!-- Card -->
+    <div class="w-[320px] h-[490px] md:w-[520px] md:h-[450px] bg-transparent">
+      <!-- Front  -->
+      <div
+        id="front"
+        class="w-[320px] h-[490px] bg-customDarkBlue md:p-10 p-8 flex flex-col items-center rounded-lg shadow-lg md:w-[520px] md:h-[450px] md:rounded-xl"
+      >
+        <h1
+          class="text-customWhite text-xl uppercase md:text-3xl font-bold -tracking-tighter"
         >
-            <span
-                class="left-2 text-[8px] md:text-lg absolute md:top-5.5 md:left-3"
-                >Encrypt</span
-            >
-            <span
-                class="text-[8px] md:text-lg absolute md:top-5.5 md:right-2 right-1.5"
-                >Decrypt</span
-            >
-            <span
-                id="switch"
-                class="bg-customWhite transition-all duration-1000 ease-in-out text-center absolute top-0 left-0 w-[50%] h-[100%] rounded-full"
-            ></span>
-        </button>
-        <!-- Card -->
-        <div
-            class="w-[320px] h-[490px] md:w-[520px] md:h-[450px] bg-transparent"
-        >
-            <!-- Front  -->
-            <div
-                id="front"
-                class="w-[320px] h-[490px] bg-customDarkBlue md:p-10 p-8 flex flex-col items-center rounded-lg shadow-lg md:w-[520px] md:h-[450px] md:rounded-xl"
-            >
-                <h1
-                    class="text-customWhite text-xl uppercase md:text-3xl font-bold -tracking-tighter"
-                >
-                    Vigenere Algorithm
-                </h1>
+          Vigenere Algorithm
+        </h1>
 
-                <!-- Input Plain Text -->
-                <div class="space-y-4 mt-8">
-                    <label class="text-white text-lg md:text-2xl capitalize"
-                        >Plain Text:
-                    </label>
-                    <input
-                        id="plain-text"
-                        type="text"
-                        placeholder="Enter Plain Text"
-                        class="p-1 text-lg ml-4 rounded-full md:px-6 md:text-xl px-4 bg-customGrey text-customWhite placeholder:text-customWhite focus:outline-none md:py-2"
-                        required
-                    />
-                </div>
-
-                <!-- Input key -->
-                <div class="space-y-4 mt-6 md:space-x-20">
-                    <label class="text-white text-lg md:text-2xl capitalize"
-                        >Key:
-                    </label>
-                    <input
-                        id="fkey"
-                        type="text"
-                        placeholder="Enter Key"
-                        class="p-1 text-lg ml-4 md:px-6 md:py-2 md:text-xl rounded-full px-4 bg-customGrey text-customWhite placeholder:text-customWhite focus:outline-none"
-                        required
-                    />
-                </div>
-
-                <!-- Result -->
-                <div class="space-y-4 md:space-x-12 mt-6 md:mt-6">
-                    <label class="text-white text-lg md:text-2xl capitalize"
-                        >Cipher:
-                    </label>
-                    <input
-                        id="cipher"
-                        type="text"
-                        class="p-1 text-lg ml-4 md:px-6 md:py-2 md:text-xl rounded-full px-4 bg-customGrey text-customWhite placeholder:text-customWhite focus:outline-none"
-                    />
-                </div>
-
-                <!-- Button Container -->
-                <div class="mt-8 md:mt-10">
-                    <button
-                        id="ebtn"
-                        class="bg-customLightRed md:text-xl uppercase active:scale-[0.98] -tracking-tighter px-4 py-2 rounded-full text-customWhite cursor-pointer"
-                    >
-                        Encrypt
-                    </button>
-                </div>
-            </div>
-
-            <!-- Back -->
-            <div>
-                <div
-                    id="back"
-                    class="hidden w-[320px] h-[490px] bg-customDarkBlue md:p-10 p-8 flex-col items-center rounded-lg shadow-lg md:w-[520px] md:h-[450px] md:rounded-xl"
-                >
-                    <h1
-                        class="text-customWhite text-xl uppercase md:text-3xl font-bold -tracking-tighter"
-                    >
-                        Vigenere Algorithm
-                    </h1>
-
-                    <!-- Input Plain Text -->
-                    <div class="space-y-4 mt-8 md:space-x-8">
-                        <label class="text-white text-lg md:text-2xl capitalize"
-                            >Cipher:
-                        </label>
-                        <input
-                            id="cipher-text"
-                            type="text"
-                            placeholder="Enter Cipher Text"
-                            class="p-1 text-lg ml-4 rounded-full md:px-6 md:text-xl px-4 bg-customGrey text-customWhite placeholder:text-customWhite focus:outline-none md:py-2"
-                            required
-                        />
-                    </div>
-
-                    <!-- Input key -->
-                    <div class="space-y-4 mt-6 md:space-x-16">
-                        <label class="text-white text-lg md:text-2xl capitalize"
-                            >Key:
-                        </label>
-                        <input
-                            id="bkey"
-                            type="text"
-                            placeholder="Enter Key"
-                            class="p-1 text-lg ml-4 md:px-6 md:py-2 md:text-xl rounded-full px-4 bg-customGrey text-customWhite placeholder:text-customWhite focus:outline-none"
-                            required
-                        />
-                    </div>
-
-                    <!-- Result -->
-                    <div class="space-y-4 md:space-x-12 mt-6 md:mt-6">
-                        <label class="text-white text-lg md:text-2xl capitalize"
-                            >Plain :
-                        </label>
-                        <input
-                            id="plain"
-                            type="text"
-                            class="p-1 text-lg ml-4 md:px-6 md:py-2 md:text-xl rounded-full px-4 bg-customGrey text-customWhite placeholder:text-customWhite focus:outline-none"
-                        />
-                    </div>
-
-                    <!-- Button Container -->
-                    <div class="mt-8 md:mt-10">
-                        <button
-                            id="dbtn"
-                            class="bg-customLightRed md:text-xl uppercase active:scale-[0.98] -tracking-tighter px-4 py-2 rounded-full text-customWhite cursor-pointer"
-                        >
-                            Decrypt
-                        </button>
-                    </div>
-                </div>
-            </div>
+        <!-- Input Plain Text -->
+        <div class="space-y-4 mt-8 md:flex md:space-x-16 md:space-y-0 md:mt-12">
+          <label class="text-white text-lg md:text-2xl capitalize"
+            >Plain:
+          </label>
+          <input
+            id="plain-text"
+            type="text"
+            placeholder="Enter Plain Text"
+            class="p-1 text-lg ml-4 w-[90%] rounded-full md:px-6 md:text-xl px-4 bg-customGrey text-customWhite placeholder:text-customWhite focus:outline-none md:py-2"
+            required
+          />
         </div>
 
-        <script src="../build/js/script.js"></script>
-    </body>
+        <!-- Input key -->
+        <div class="space-y-4 mt-6 md:space-y-0 md:space-x-20 md:flex md:mt-8">
+          <label class="text-white text-lg md:text-2xl capitalize">Key: </label>
+          <input
+            id="fkey"
+            type="text"
+            placeholder="Enter Key"
+            class="p-1 text-lg ml-4 w-[90%] md:px-6 md:py-2 md:text-xl rounded-full px-4 bg-customGrey text-customWhite placeholder:text-customWhite focus:outline-none"
+            required
+          />
+        </div>
+
+        <!-- Result -->
+        <div class="space-y-4 md:space-x-12 mt-6 md:mt-10 md:flex md:space-y-0">
+          <label class="text-white text-lg md:text-2xl capitalize"
+            >Cipher:
+          </label>
+          <input
+            id="cipher"
+            type="text"
+            class="p-1 text-lg ml-4 md:px-6 w-[90%] md:py-2 md:text-xl rounded-full px-4 bg-customGrey text-customWhite placeholder:text-customWhite focus:outline-none"
+          />
+        </div>
+
+        <!-- Button Container -->
+        <div class="mt-8 md:mt-10">
+          <button
+            id="ebtn"
+            class="bg-customLightRed md:text-xl uppercase active:scale-[0.98] -tracking-tighter px-4 py-2 rounded-full text-customWhite cursor-pointer"
+          >
+            Encrypt
+          </button>
+        </div>
+      </div>
+
+      <!-- Back -->
+      <div>
+        <div
+          id="back"
+          class="hidden w-[320px] h-[490px] bg-customDarkBlue md:p-10 p-8 flex-col items-center rounded-lg shadow-lg md:w-[520px] md:h-[450px] md:rounded-xl"
+        >
+          <h1
+            class="text-customWhite text-xl uppercase md:text-3xl font-bold -tracking-tighter"
+          >
+            Vigenere Algorithm
+          </h1>
+
+          <!-- Input Plain Text -->
+          <div
+            class="space-y-4 mt-8 md:flex md:space-x-16 md:space-y-0 md:mt-12"
+          >
+            <label class="text-white text-lg md:text-2xl capitalize"
+              >Cipher:
+            </label>
+            <input
+              id="cipher-text"
+              type="text"
+              placeholder="Enter Plain Text"
+              class="p-1 text-lg ml-4 w-[90%] rounded-full md:px-6 md:text-xl px-4 bg-customGrey text-customWhite placeholder:text-customWhite focus:outline-none md:py-2"
+              required
+            />
+          </div>
+
+          <!-- Input key -->
+          <div
+            class="space-y-4 mt-6 md:space-y-0 md:space-x-24 md:flex md:mt-8"
+          >
+            <label class="text-white text-lg md:text-2xl capitalize"
+              >Key:
+            </label>
+            <input
+              id="bkey"
+              type="text"
+              placeholder="Enter Key"
+              class="p-1 text-lg ml-4 w-[90%] md:px-6 md:py-2 md:text-xl rounded-full px-4 bg-customGrey text-customWhite placeholder:text-customWhite focus:outline-none"
+              required
+            />
+          </div>
+
+          <!-- Result -->
+          <div
+            class="space-y-4 md:space-x-20 mt-6 md:mt-10 md:flex md:space-y-0"
+          >
+            <label class="text-white text-lg md:text-2xl capitalize"
+              >Plain:
+            </label>
+            <input
+              id="plain"
+              type="text"
+              class="p-1 text-lg ml-4 md:px-6 w-[90%] md:py-2 md:text-xl rounded-full px-4 bg-customGrey text-customWhite placeholder:text-customWhite focus:outline-none"
+            />
+          </div>
+
+          <!-- Button Container -->
+          <div class="mt-8 md:mt-10">
+            <button
+              id="dbtn"
+              class="bg-customLightRed md:text-xl uppercase active:scale-[0.98] -tracking-tighter px-4 py-2 rounded-full text-customWhite cursor-pointer"
+            >
+              Decrypt
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../build/js/script.js"></script>
+  </body>
 </html>
