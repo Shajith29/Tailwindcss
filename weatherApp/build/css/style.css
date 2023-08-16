@@ -524,6 +524,10 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.mt-4{
+  margin-top: 1rem;
+}
+
 .mt-6{
   margin-top: 1.5rem;
 }
@@ -532,20 +536,8 @@ video {
   margin-top: 2rem;
 }
 
-.mt-4{
-  margin-top: 1rem;
-}
-
-.mt-5{
-  margin-top: 1.25rem;
-}
-
 .flex{
   display: flex;
-}
-
-.h-\[100px\]{
-  height: 100px;
 }
 
 .h-\[90px\]{
@@ -568,12 +560,20 @@ video {
   width: 320px;
 }
 
+.w-\[80\%\]{
+  width: 80%;
+}
+
 .w-\[80px\]{
   width: 80px;
 }
 
 .w-\[90px\]{
   width: 90px;
+}
+
+.w-\[90\%\]{
+  width: 90%;
 }
 
 .flex-col{
@@ -608,12 +608,6 @@ video {
   --tw-space-y-reverse: 0;
   margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
-}
-
-.space-y-6 > :not([hidden]) ~ :not([hidden]){
-  --tw-space-y-reverse: 0;
-  margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(1.5rem * var(--tw-space-y-reverse));
 }
 
 .space-y-8 > :not([hidden]) ~ :not([hidden]){
@@ -748,10 +742,6 @@ video {
 }
 
 @media (min-width: 768px){
-  .md\:mt-6{
-    margin-top: 1.5rem;
-  }
-
   .md\:mt-8{
     margin-top: 2rem;
   }
@@ -815,18 +805,13 @@ video {
     line-height: 2.5rem;
   }
 
-  .md\:text-6xl{
-    font-size: 3.75rem;
+  .md\:text-5xl{
+    font-size: 3rem;
     line-height: 1;
   }
 
   .md\:text-xl{
     font-size: 1.25rem;
     line-height: 1.75rem;
-  }
-
-  .md\:text-5xl{
-    font-size: 3rem;
-    line-height: 1;
   }
 }
