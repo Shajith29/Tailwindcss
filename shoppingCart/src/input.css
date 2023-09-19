@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.open {
+  transform: translateX(0);
+}
+
+.item {
+  text-align: center;
+  padding: 20px;
+  background-color: #dce0e1;
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.list {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.2rem;
+}

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart</title>
+    <link rel="stylesheet " href="css/style.css" type="text/css" />
+  </head>
+  <body class="bg-customWhite font-Poppins">
+    <!-- Cart -->
+    <div
+      class="w-[1000px] mx-auto flex flex-col first-letter:items-center justify-center"
+    >
+      <header class="flex items-center justify-between mt-5 w-[100%]">
+        <h1 class="text-2xl mt-7 font-bold text-customDarkBlue uppercase">
+          Your Shopping Cart
+        </h1>
+        <div id="open" class="relative text-right cursor-pointer">
+          <img
+            src="../image/shopping.svg"
+            alt="shoppingcart"
+            class="w-[40px] mt-4"
+          />
+          <span
+            id="quantity"
+            class="bg-customRed text-white w-[25px] h-[25px] absolute top-3.5 left-6 rounded-full flex items-center justify-center"
+            >0</span
+          >
+        </div>
+      </header>
+
+      <div
+        id="list"
+        class="flex mt-10 gap-y-4 mx-auto items-center justify-between flex-wrap w-[75%]"
+      ></div>
+    </div>
+
+    <!-- End of Cart  -->
+
+    <!-- Card -->
+
+    <div
+      id="card"
+      class="fixed bg-customDarkBlue translate-x-[500px] duration-500 top-0 w-[500px] left-[calc(100%-500px)] min-h-screen"
+    >
+      <h1
+        class="text-2xl text-customWhite font-bold text-center p-4 uppercase -tracking-tighter"
+      >
+        Card
+      </h1>
+      <ul
+        id="listCard"
+        class="flex text-customWhite flex-col items-center gap-y-4 justify-between"
+      ></ul>
+
+      <div
+        class="bg-customRed flex text-white items-center justify-between absolute bottom-0 w-[100%]"
+      >
+        <div
+          id="total"
+          class="w-[50%] cursor-pointer uppercase text-xl h-[70px] flex items-center justify-center"
+        >
+          Total:
+        </div>
+        <div
+          id="close"
+          class="w-[50%] uppercase cursor-pointer h-[70px] text-xl flex items-center justify-center"
+        >
+          Close
+        </div>
+      </div>
+    </div>
+
+    <script src="../build/js/script.js"></script>
+  </body>
+</html>
