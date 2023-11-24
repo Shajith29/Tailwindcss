@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product filter and search</title>
+    <link rel="stylesheet" href="./css/style.css" type="text/css" />
+  </head>
+  <body class="bg-customSandal font-Poppins">
+    <!-- Container  -->
+    <div
+      class="w-[1000px] max-width[100%] bg-customLightPurple mx-auto my-16 rounded-lg p-6"
+    >
+      <form id="filter" class="grid grid-cols-3 p-8 bg-customSandal gap-4">
+        <div
+          id="item"
+          class="bg-customDarkPurple text-white flex items-center justify-center"
+        >
+          <!-- Category -->
+          <label class="block w-[40% px-1]"> Category: </label>
+          <select
+            name="category"
+            class="border-none bg-transparent w-[50%] px-4"
+          >
+            <option value="">----</option>
+            <option value="T-Shirt">T-Shirt</option>
+            <option value="Shirt">Shirt</option>
+            <option value="Polo">Polo</option>
+          </select>
+        </div>
+
+        <!-- End of Category -->
+
+        <!-- Color -->
+        <div
+          id="item"
+          class="bg-customDarkPurple text-white flex items-center justify-center p-2"
+        >
+          <label class="block w-[40%] px-1">Color: </label>
+          <select name="color" class="border-none bg-transparent w-[50%] px-4">
+            <option value="">----</option>
+            <option value="Blue">Blue</option>
+            <option value="Brown">Brown</option>
+            <option value="White">White</option>
+            <option value="Black">Black</option>
+            <option value="Grey">Grey</option>
+          </select>
+        </div>
+        <!-- End of Color -->
+
+        <!-- Product Name -->
+        <div
+          id="item"
+          class="bg-customDarkPurple text-white flex items-center justify-center"
+        >
+          <label class="block w-[40%] px-8">Name: </label>
+          <input
+            class="border-none bg-transparent w-[50%] px-4 outline-none"
+            type="text"
+            id="name"
+          />
+        </div>
+
+        <!-- End of Product Name -->
+
+        <!-- Max Price -->
+        <div
+          id="item"
+          class="bg-customDarkPurple text-white flex items-center justify-center p-2"
+        >
+          <label class="block w-[40%] px-1">Max Price: </label>
+          <input
+            class="border-none bg-transparent w-[50%] px-4 outline-none"
+            type="number"
+            name="maxPrice"
+          />
+        </div>
+        <!-- End of Max Price -->
+
+        <!-- Min Price -->
+        <div
+          id="item"
+          class="bg-customDarkPurple text-white flex items-center justify-center p-2"
+        >
+          <label class="block w-[40%] px-1">Min Price: </label>
+          <input
+            class="border-none bg-transparent w-[50%] px-4 outline-none"
+            type="number"
+            name="minPrice"
+          />
+        </div>
+        <!-- End of Min Price -->
+
+        <!--Search button  -->
+        <div id="btn-container">
+          <button
+            class="bg-customLightPurple w-[100%] p-2 text-white uppercase active:scale-95"
+            id="button"
+          >
+            Search
+          </button>
+        </div>
+
+        <!-- End of Search Button -->
+      </form>
+
+      <!-- No of Result Conatainer -->
+      <div class="text-2xl text-center p-4 mt-2 text-white uppercase">
+        Found<small class="text-2xl px-2" id="count"></small>Results
+      </div>
+      <!-- End of count Result -->
+
+      <!-- Product list -->
+      <div id="list" class="grid grid-cols-3 gap-y-8 gap-x-10 p-2">
+        <!-- End of Product list -->
+      </div>
+    </div>
+  </body>
+
+  <script src="../build/js/script.js"></script>
+</html>

@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Generator</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+      integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+  </head>
+  <body
+    class="flex flex-col items-center justify-center min-h-screen bg-customWhite font-Poppins"
+  >
+    <!-- Outer Container -->
+
+    <div
+      class="w-[310px] max-h-[450px] bg-customDarkBlue text-customWhite p-8 flex flex-col items-center rounded-md shadown-md md:w-[450px] md:max-h-[600px] md:p-10 md:rounded-lg space-y-8"
+    >
+      <!-- Title -->
+      <h1 class="text-lg uppercase -tracking-tighter md:text-2xl font-bold">
+        Password Generator
+      </h1>
+
+      <!-- Result Container -->
+
+      <div
+        class="w-[95%] bg-customWhite h-[35px] md:w-[100%] md:h-[40px] space-x-24 relative"
+      >
+        <span
+          id="result"
+          class="text-sm w-[150px] px-1 absolute top-1.5 md:text-xl md:top-1 text-customDarkBlue"
+        ></span>
+        <button
+          id="clipboard"
+          class="w-[40px] active:scale-95 ease-in-out duration-300 h-[30px] md:w-[50px] md:h-[35px] absolute top-0.5 right-0.5 text-customWhite bg-customDarkBlue"
+        >
+          <i class="far fa-clipboard text-xl md:text-2xl"></i>
+        </button>
+      </div>
+
+      <!-- End of Result Container -->
+
+      <!-- Settings containter -->
+
+      <div class="flex flex-col items-center space-y-4">
+        <!-- Setting container -->
+        <div class="flex justify-between">
+          <label class="md:text-xl">Password Length</label>
+          <input
+            id="plength"
+            type="number"
+            max="20"
+            min="5"
+            class="w-[15%] md:w-[15%] text-sm md:text-lg foucs:outline-none text-customDarkBlue text-center"
+          />
+        </div>
+
+        <!-- Setting container -->
+        <div class="flex w-[100%] justify-between">
+          <label class="md:text-xl">Uppercase: </label>
+          <input id="ucase" type="checkbox" class="md:w-[18px]" />
+        </div>
+
+        <!-- Setting container -->
+        <div class="flex w-[100%] justify-between">
+          <label class="md:text-xl">Lowercase: </label>
+          <input id="lcase" type="checkbox" class="md:w-[18px]" />
+        </div>
+
+        <!-- Setting container -->
+        <div class="flex w-[100%] justify-between">
+          <label class="md:text-xl">Numbers: </label>
+          <input id="num" type="checkbox" class="md:w-[18px]" />
+        </div>
+
+        <!-- Setting container -->
+        <div class="flex w-[100%] justify-between">
+          <label class="md:text-xl">Symbols: </label>
+          <input id="symbol" type="checkbox" class="md:w-[18px]" />
+        </div>
+      </div>
+
+      <!-- End of Settings Container -->
+
+      <!-- Button Container -->
+
+      <div
+        class="bg-customWhite w-[80%] md:text-xl md:p-1 active:scale-95 ease-linear duration-300 cursor-pointer text-customDarkBlue p-0.5 flex items-center justify-center"
+      >
+        <button id="gbutton">Generate Password</button>
+      </div>
+
+      <!-- End of Button Container -->
+    </div>
+  </body>
+  <script src="../build/js/script.js"></script>
+</html>
