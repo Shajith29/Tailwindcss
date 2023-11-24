@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.heros {
+    background-image: url("/Flowershop/images/flowers-waffle-cones-composition.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.about {
+    background-image: url("/images/composition-with-bouquet-pink-flowers-pink-background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+}
+.bgImg {
+    background-image: url("/Flowershop/images/aj-McsNra2VRQQ-unsplash.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.btnCont {
+    position: absolute;
+    top: -50px;
+}
+
+.imgContainer:hover .btnCont {
+    position: absolute;
+    top: 0px;
+    transition: 0.4s ease-in-out;
+}
+
+.top-link {
+    animation: bounce 1.5s linear infinite;
+}
+
+.open {
+    transform: translateX(0);
+}
+
+.item {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #ffb3c6;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.list {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 1.2rem;
+    gap: 10px;
+}
+
+@keyframes bounce {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.3);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
